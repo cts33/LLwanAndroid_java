@@ -1,0 +1,2 @@
+rootProject.name = "LLwanAndroid_java"
+include ':app'
