@@ -13,6 +13,7 @@ import com.google.android.material.tabs.TabLayoutMediator;
 import com.lll.android.base.BaseActivity;
 import com.lll.android.ui.fragment.HomeFragment;
 import com.lll.android.ui.fragment.KnowledgeFragment;
+import com.lll.android.ui.fragment.MyFragment;
 import com.lll.android.ui.fragment.NavigationFragment;
 
 import java.util.ArrayList;
@@ -40,7 +41,7 @@ public class MainActivity extends BaseActivity {
         fragmentList.add(new HomeFragment());
         fragmentList.add(new KnowledgeFragment());
         fragmentList.add(new NavigationFragment());
-        fragmentList.add(new HomeFragment());
+        fragmentList.add(new MyFragment());
 
         mViewpager = (ViewPager2) findViewById(R.id.viewpager);
         mTabLayout = (TabLayout) findViewById(R.id.tabLayout);

@@ -1,4 +1,4 @@
-package com.lll.android;
+package com.lll.android.pager3;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -12,17 +12,18 @@ import androidx.paging.PagingDataAdapter;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.lll.android.R;
 import com.lll.android.bean.MotoBean;
 
 import org.jetbrains.annotations.NotNull;
-
-import kotlinx.coroutines.CoroutineDispatcher;
 
 public class MyAdapter extends PagingDataAdapter<MotoBean.Datam, MyAdapter.ViewHolder> {
 
     Context context;
 
     public MyAdapter( Context context) {
+
         super(new DiffUtil.ItemCallback<MotoBean.Datam>(){
             @Override
             public boolean areItemsTheSame(@NonNull @NotNull MotoBean.Datam oldItem, @NonNull @NotNull MotoBean.Datam newItem) {
@@ -50,6 +51,7 @@ public class MyAdapter extends PagingDataAdapter<MotoBean.Datam, MyAdapter.ViewH
         MotoBean.Datam item = getItem(position);
 
         holder.title.setText(item.getGoodName()+"  "+item.getBrandName());
+        Glide.with(context).load(item.getGoodPic()).into(holder.img);
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

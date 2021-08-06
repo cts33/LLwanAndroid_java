@@ -20,6 +20,7 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public void onCreate(@Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        context   = requireActivity();
     }
 
     @Nullable
@@ -28,7 +29,7 @@ public abstract class BaseFragment extends Fragment {
     public View onCreateView(@NonNull @NotNull LayoutInflater inflater, @Nullable @org.jetbrains.annotations.Nullable ViewGroup container, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         root = inflater.inflate(getLayout(),null);
         initView();
-        context   = requireActivity();
+
         loadingDialog();
         initData();
 
